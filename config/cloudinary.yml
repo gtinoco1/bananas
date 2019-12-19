@@ -1,0 +1,9 @@
+production:
+  cloud_name: "hiqkkly1d"
+  api_key: "448619139292397"
+  api_secret: "JOv1-Y9EL7KIVBzlMdyyWduIGJU"
+  
+development:
+  cloud_name: "hiqkkly1d"
+  api_key: "448619139292397"
+  api_secret: "JOv1-Y9EL7KIVBzlMdyyWduIGJU"

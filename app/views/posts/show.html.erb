@@ -4,6 +4,7 @@
       <%= @post.title %>
     </h4>
     <p class="font-text-light small"> Posted Date by I'm Going Bananas </p>
+    <a href="/posts/<%= @post.id %>/edit"> edit </a>
   </div>
 </div>
 
@@ -11,11 +12,8 @@
   <div class="col-lg-8 offset-lg-2">
 
     <dl>
-      <dt>
-        Photo1
-      </dt>
       <dd>
-       <img src="<%= @post.photo1 %>" class="img-responsive">
+         <img src="<%= @post.photo1 %>" class="img-responsive">
       </dd>
 
       <dt>

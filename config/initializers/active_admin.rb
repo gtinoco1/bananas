@@ -2,7 +2,7 @@ ActiveAdmin.setup do |config|
       # If you are using Devise's before_action :authenticate_user!
       #   in your ApplicationController, then uncomment the following:
 
-      # config.skip_before_action :authenticate_user!
+      #  config.skip_before_action :authenticate_user!
 
   # == Site Title
   #
