@@ -1,0 +1,16 @@
+
+<div class="row mb-3">
+  <div class="col-lg-8 offset-lg-2">
+      <% @posts.each do |post| %>
+      
+        <%= post.title %>
+          <%= post.photo1 %>
+          <a href="/posts/<%= post.id %>">
+            Show details
+          </a>
+
+      <% end %>
+  </div>
+</div>
+
+<hr>

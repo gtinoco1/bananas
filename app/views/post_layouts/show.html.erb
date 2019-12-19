@@ -1,0 +1,101 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Post layout #<%= @post_layout.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/post_layouts" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_post_layout/<%= @post_layout.id %>" class="btn btn-block btn-outline-secondary">
+          Delete post layout
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Photo count
+      </dt>
+      <dd>
+        <%= @post_layout.photo_count %>
+      </dd>
+
+      <dt>
+        Caption count
+      </dt>
+      <dd>
+        <%= @post_layout.caption_count %>
+      </dd>
+
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @post_layout.name %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@post_layout.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@post_layout.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Edit post layout
+    </h2>
+
+    <form action="/modify_post_layout/<%= @post_layout.id %>"  method="post" >
+      <div class="form-group">
+        <label for="photo_count_box">
+          Photo count
+        </label>
+
+        <input type="text" id="photo_count_box" name="photo_count_from_query" class="form-control" value="<%= @post_layout.photo_count %>">
+      </div>
+
+      <div class="form-group">
+        <label for="caption_count_box">
+          Caption count
+        </label>
+
+        <input type="text" id="caption_count_box" name="caption_count_from_query" class="form-control" value="<%= @post_layout.caption_count %>">
+      </div>
+
+      <div class="form-group">
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="name_from_query" class="form-control" value="<%= @post_layout.name %>">
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Update post layout
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

@@ -1,0 +1,118 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      List of all post layouts
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Add a new post layout
+    </h2>
+
+    <form action="/insert_post_layout" method="post">
+      <div class="form-group">
+        <label for="photo_count_box">
+          Photo count
+        </label>
+
+        <input type="text" id="photo_count_box" name="photo_count_from_query" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="caption_count_box">
+          Caption count
+        </label>
+
+        <input type="text" id="caption_count_box" name="caption_count_from_query" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="name_from_query" class="form-control">
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Create post layout
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Photo count
+        </th>
+
+        <th>
+          Caption count
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @post_layouts.each do |post_layout| %>
+      <tr>
+        <td>
+          <%= post_layout.id %>
+        </td>
+
+        <td>
+          <%= post_layout.photo_count %>
+        </td>
+
+        <td>
+          <%= post_layout.caption_count %>
+        </td>
+
+        <td>
+          <%= post_layout.name %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(post_layout.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(post_layout.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/post_layouts/<%= post_layout.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
