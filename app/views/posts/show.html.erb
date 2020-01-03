@@ -1,113 +1,90 @@
 <div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
+  <div class="col-md-6 offset-md-2">
     <h4>
       <%= @post.title %>
     </h4>
+
     <p class="font-text-light small"> Posted Date by I'm Going Bananas </p>
-    <a href="/posts/<%= @post.id %>/edit"> edit </a>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-lg-8 offset-lg-2">
+<div class="row mb-3">
+  <div class="col-lg-6 offset-lg-2">
 
-    <dl>
-      <dd>
-         <img src="<%= @post.photo1 %>" class="img-responsive">
-      </dd>
+  <div class="mb-3">
+      <img src="<%= @post.photo1 %>" class="img-fluid">
+  </div>
 
-      <dt>
-        Photo2
-      </dt>
-      <dd>
-        <%= @post.photo2 %>
-      </dd>
+  <div class="mb-3">
+        <p><%= @post.caption1 %> </p>
+  </div>
 
-      <dt>
-        Photo3
-      </dt>
-      <dd>
-        <%= @post.photo3 %>
-      </dd>
 
-      <dt>
-        Photo4
-      </dt>
-      <dd>
-        <%= @post.photo4 %>
-      </dd>
+  <div class="mb-3">
+      <img src="<%= @post.photo2 %>" class="img-fluid">
+  </div>
 
-      <dt>
-        Ingredients
-      </dt>
-      <dd>
-        <%= @post.ingredients %>
-      </dd>
+<div class="card text-center mb-3">
+  <div class="card-body">
 
-      <dt>
-        Instructions
-      </dt>
-      <dd>
-        <%= @post.instructions %>
-      </dd>
+    <div class="text-right">
+    <a href="" class="btn btn-sm btn-outline-warning">Print</a>
+    </div>
 
-      <dt>
-        Category
-      </dt>
-      <dd>
-        <%= @post.category %>
-      </dd>
+    <h4 class="card-title"> <%= @post.title %>
+    </h4>
 
-      <dt>
-        Caption1
-      </dt>
-      <dd>
-        <%= @post.caption1 %>
-      </dd>
+    <p> Serves <%= @post.serving %> </p>
+    <div>
+      <hr>
+       <h6> Prep Time: </h6> <p><%= @post.prep_time %></p>
+      <hr>
+    </div>
 
-      <dt>
-        Caption2
-      </dt>
-      <dd>
+    <h5 class="card-title text-left text-info">INGREDIENTS</h5>
+    <div class="text-left">
+    <p class="card-text text-left"><%= simple_format(@post.ingredients) %></p>
+    </div>
+
+    <h5 class="card-title text-left text-info">INSTRUCTIONS</h5>
+    <div class="text-left">
+    <p class="card-text text-left"><%= simple_format(@post.instructions) %></p>
+    </div>
+
+    <h5 class="card-title text-left text-info">NOTES</h5>
+    <div class="text-left">
+    <p class="card-text text-left"><%= simple_format(@post.notes) %></p>
+    </div>
+  </div>
+</div>
+
+  <div class="mb-3">
+      <img src="<%= @post.photo3 %>" class="img-fluid">
+  </div>
+
         <%= @post.caption2 %>
-      </dd>
-
-      <dt>
-        Caption3
-      </dt>
-      <dd>
         <%= @post.caption3 %>
-      </dd>
-
-      <dt>
-        Prep time
-      </dt>
-      <dd>
-        <%= @post.prep_time %>
-      </dd>
-
-      <dt>
-        Cook time
-      </dt>
-      <dd>
         <%= @post.cook_time %>
-      </dd>
-
-      <dt>
-        Serving
-      </dt>
-      <dd>
-        <%= @post.serving %>
-      </dd>
-
-      <dt>
-        Post layout
-      </dt>`  
-      <dd>
+        
         <%= @post.post_layout_id %>
-      </dd>
 
-    </dl>
   </div>
+
+<div class="col-lg-2 text-center">
+  
+  <div class="mb-4">
+  <hr>
+        <h6> Search </h6>
+  <hr>
+  </div>
+  
+  <a type="button" class="btn-floating btn-large btn-fb"><i class="fab fa-facebook-square fa-2x"></i></a>
+  <a type="button" class="btn-floating btn-large btn-fb"><i class="fab fa-instagram fa-2x"></i></a>
+  
+  <div>
+        <a href="/posts/<%= @post.id %>/edit"> edit </a>
+  </div>
+
 </div>
 
+</div>

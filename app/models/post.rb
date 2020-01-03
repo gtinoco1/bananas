@@ -10,6 +10,7 @@
 #  cook_time      :integer
 #  ingredients    :text
 #  instructions   :text
+#  notes          :text
 #  photo1         :string
 #  photo2         :string
 #  photo3         :string
@@ -26,6 +27,8 @@
 class Post < ApplicationRecord
 
 mount_uploader :photo1, Photo1Uploader
+mount_uploader :photo2, Photo2Uploader
+mount_uploader :photo3, Photo3Uploader
 
 belongs_to :user
 has_many :comments, :dependent => :destroy
